@@ -32,6 +32,7 @@ cap.set(4,480)
 while True:
 
     success, img = cap.read()
+    img = cv2.flip(img, 1)
     for barcode in decode(img):
         myData = clean_decoded_data(barcode.data)
         print(myData)
